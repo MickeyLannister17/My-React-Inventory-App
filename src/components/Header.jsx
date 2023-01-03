@@ -13,8 +13,11 @@ function Header() {
       <div>
         <Inventory />
       </div>
-      <div className="w-24 h-10 border text-center py-2 border-primary rounded-md bg-secondary">
-        <button className="text-primary text-center font-semiBold font-sans">
+      <div className="">
+        <button
+          className="text-secondary font-semiBold w-24 h-10 border text-center py-2 border-primary rounded-md
+        bg-red-900 transition duration-300 hover:text-secondary cursor-pointer"
+        >
           Logout
         </button>
       </div>
