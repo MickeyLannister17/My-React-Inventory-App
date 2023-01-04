@@ -4,7 +4,7 @@ import Inventory from "./Inventory";
 
 function Header() {
   return (
-    <div className="sticky bg-primary max-w-[1640px] mx-auto flex justify-between md:justify-around items-center p-4">
+    <div className="bg-primary max-w-[1640px] mx-auto flex justify-between md:justify-around items-center p-4">
       <div>
         <h1 className="text-1xl font-bold uppercase p-1 text-white border-b border-gray-100 cursor-pointer">
           Invent<span className="text-red-900">ory</span>

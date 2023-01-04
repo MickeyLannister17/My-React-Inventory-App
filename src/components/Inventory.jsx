@@ -1,7 +1,8 @@
 import { BsFillCartCheckFill } from "react-icons/bs";
 
 function Inventory() {
-  let quantity = 5;
+  let quantity = 0;
+
   return (
     <div className="">
       <button className="text-secondary flex items-center justify-center font-semibold border border-secondary py-2 w-32 rounded h-10">
