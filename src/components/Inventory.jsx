@@ -1,13 +1,30 @@
 import { BsFillCartCheckFill } from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
+import { inventoryActions } from "../store/cartSlice";
 
 function Inventory() {
-  let quantity = 0;
+  const inventoryItem = useSelector((state) => state.inventory.inventoryList);
+
+  const cartTotalQuantity = inventoryItem.reduce(
+    (accumulator, item) => accumulator + item.quantity,
+    0
+  );
+  const dispatch = useDispatch();
+  cartTotalQuantity;
+
+  const showInventory = () => {
+    dispatch(inventoryActions.setShowInventory());
+  };
+  // let quantity = 0;
 
   return (
     <div className="">
-      <button className="text-secondary flex items-center justify-center font-semibold border border-secondary py-2 w-32 rounded h-10">
-        <BsFillCartCheckFill size={30} color="white" className="" />: {quantity}{" "}
-        Items
+      <button
+        onClick={showInventory}
+        className="text-secondary flex items-center justify-center font-semibold border border-secondary py-2 w-32 rounded h-10"
+      >
+        <BsFillCartCheckFill size={30} color="white" className="" />:{" "}
+        {cartTotalQuantity} Items
       </button>
     </div>
   );

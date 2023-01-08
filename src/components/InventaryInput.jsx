@@ -2,41 +2,40 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { inventoryActions } from "../store/cartSlice";
+import { useId } from "react";
+import uuid from "react-uuid";
 
 const InventaryInput = () => {
+  // const id = useId();
   // const inventoryItem = useSelector((state) => state.inventory.inventoryList);
   // console.log(inventoryItem);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // const addToInventory = (e) => {
-  //   e.preventDefault();
+  const addToInventory = (e) => {
+    e.preventDefault();
 
-  //   const formData = e.target;
-  //   const newProduct = {
-  //     product: formData.product.value,
-  //     price: formData.price.value,
-  //     quantity: formData.quantity.value,
-  //   };
-  //   console.log(newProduct);
+    const formData = e.target;
+    const newProduct = {
+      id: uuid(),
+      product: formData.product.value,
+      price: formData.price.value,
+      quantity: formData.quantity.value,
+    };
+    // console.log(newProduct);
 
-  //   dispatch(inventoryActions.addToInventory(newProduct));
-  // };
-  const { register, handleSubmit, watch } = useForm();
-  const onSubmit = (data) => console.log(data);
-  console.log(watch("product"));
+    dispatch(inventoryActions.addToInventory(newProduct));
+  };
+
   return (
     <div className="max-w-[1640px] mx-auto  mt-2">
       <div className="flex flex-col justify-center items-center bg-primary mx-auto py-4">
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col text-white"
-        >
+        <form onSubmit={addToInventory} className="flex flex-col text-white">
           <label className="text-[22px] text-center" htmlFor="product_name">
             Product Name:
           </label>
           <input
             type="text"
-            {...register("product")}
+            name="product"
             placeholder="Enter Product Name"
             className="px-4 py-4 mb-2 text-[18px] font-semiBold text-center md:text-left mt-2 min-w-[300px] md:min-w-[400px] h-[50px] rounded
              bg-primary md:bg-white border-2 border-white md:border-secondary text-secondary md:text-primary"
@@ -46,7 +45,8 @@ const InventaryInput = () => {
           </label>
           <input
             type="number"
-            {...register("price")}
+            name="price"
+            min={1}
             placeholder="Price In Dollar"
             className="px-4 py-4 mb-2 text-[18px] font-semiBold text-center md:text-left mt-2 min-w-[300px] md:min-w-[400px] h-[50px] rounded
              bg-primary md:bg-white border-2 border-white md:border-primary text-secondary md:text-primary"
@@ -56,7 +56,8 @@ const InventaryInput = () => {
           </label>
           <input
             type="number"
-            {...register("quantity")}
+            name="quantity"
+            min={1}
             placeholder="How many: qty"
             className="px-4 py-4 mb-2 text-[18px] font-semiBold text-center md:text-left mt-2 min-w-[300px] md:min-w-[400px] h-[50px] rounded
              bg-primary md:bg-white text-secondary md:text-primary border-white md:border-primary border-2"
