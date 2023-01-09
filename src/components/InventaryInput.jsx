@@ -27,7 +27,7 @@ const InventaryInput = () => {
   };
 
   return (
-    <div className="max-w-[1640px] mx-auto  mt-2">
+    <div className="max-w-[1640px] mx-auto border">
       <div className="flex flex-col justify-center items-center bg-primary mx-auto py-4">
         <form onSubmit={addToInventory} className="flex flex-col text-white">
           <label className="text-[22px] text-center" htmlFor="product_name">
