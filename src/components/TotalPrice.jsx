@@ -9,7 +9,7 @@ const TotalPrice = () => {
   );
 
   return (
-    <div className="flex flex-col justify-center items-center bg-primary mx-auto pt-2 mt-1">
+    <div className="flex flex-col justify-center items-center bg-primary mx-auto pt-2 mt-1 max-w-[1640px]">
       <h3 className="text-white uppercase font-semiBold text-xl mb-1 pb-3">
         Total : ${cartTotalPrice}
       </h3>

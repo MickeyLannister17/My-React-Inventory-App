@@ -14,7 +14,7 @@ function Layout() {
       <div>
         <Header />
         <InventaryInput />
-        {showInventory && <InventoryItems />}
+        {!showInventory && <InventoryItems />}
         <TotalPrice />
         <Footer />
       </div>

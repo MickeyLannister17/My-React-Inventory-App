@@ -6,16 +6,16 @@ function Header() {
   return (
     <div className="bg-primary max-w-[1640px] mx-auto flex justify-between md:justify-around items-center p-4">
       <div>
-        <h1 className="text-1xl font-bold uppercase p-1 text-white border-b border-gray-100 cursor-pointer">
+        <h1 className="uppercase p-1 text-white md:border-b border-gray-100 cursor-pointer pr-3">
           Invent<span className="text-red-900">ory</span>
         </h1>
       </div>
       <div>
         <Inventory />
       </div>
-      <div className="">
+      <div className="pl-7">
         <button
-          className="text-secondary font-semiBold w-24 h-10 border text-center py-2 border-primary rounded-md
+          className="text-secondary font-semiBold w-20 md:24 h-10 border text-center py-2 border-primary rounded-md
         bg-red-900 transition duration-300 hover:text-secondary cursor-pointer"
         >
           Logout

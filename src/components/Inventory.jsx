@@ -21,7 +21,7 @@ function Inventory() {
     <div className="">
       <button
         onClick={showInventory}
-        className="text-secondary flex items-center justify-center font-semibold border border-secondary py-2 w-32 rounded h-10"
+        className="text-secondary flex items-center justify-center font-semibold pl-5 md:border border-secondary py-2 w-25 md:w-32 rounded h-10"
       >
         <BsFillCartCheckFill size={30} color="white" className="" />:{" "}
         {cartTotalQuantity} Items
